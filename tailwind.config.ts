@@ -17,6 +17,7 @@ export default {
       },
       backgroundImage: {
         'navbar-bg': 'linear-gradient(180deg, rgba(19,150,170,1) 0%, rgba(255,255,255,1) 89%)',
+        "backdrop-blur": "linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2650997899159666) 1%)",
       },
     },
   },
