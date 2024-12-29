@@ -12,6 +12,12 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily:{
+        mona:["var(--font-mona)"],
+      },
+      backgroundImage: {
+        'navbar-bg': 'linear-gradient(180deg, rgba(19,150,170,1) 0%, rgba(255,255,255,1) 89%)',
+      },
     },
   },
   plugins: [],
