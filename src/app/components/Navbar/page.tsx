@@ -29,7 +29,7 @@ function Navbar() {
           <NavbarOption key={option} label={option} />
         ))}
       </div>
-      <button className="px-4 py-2 bg-[#033246] text-white font-mona font-semibold text-sm rounded hover:bg-white hover:text-[#033246] transition-colors duration-300">
+      <button className="px-4 py-2 bg-[#033246] text-white font-mona font-semibold text-sm rounded-lg hover:bg-white hover:text-[#033246] hover:border hover:border-[#033246] transition-colors duration-300">
         Button Here
       </button>
     </nav>
