@@ -22,7 +22,7 @@ function NavbarOption({ label, isHovered, onHover }: NavbarOptionProps) {
           isHovered ? "rotate-180" : ""
         }`}
       >
-        <DownIcon className="hover:text-white" />
+        <DownIcon className="hover:text-white " />
       </span>
     </div>
   );
