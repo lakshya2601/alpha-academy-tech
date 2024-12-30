@@ -42,7 +42,7 @@ function NavbarOption({
 
 const Navbar = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [isContainerHovered, setIsContainerHovered] = useState(false);
+  const [ , setIsContainerHovered] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
