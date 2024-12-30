@@ -8,14 +8,13 @@ interface DropdownItem {
 interface Option {
     label: string;
     dropdown?: DropdownItem[];
-    route?: string; 
 }
 
 // Update the options array to use the Option interface
 export const options: Option[] = [
     {
       label: "Home",
-      route: "/", // Add a route for Home
+      
     },
     {
       label: "Services",
@@ -32,4 +31,3 @@ export const options: Option[] = [
       ],
     },
   ];
-  
