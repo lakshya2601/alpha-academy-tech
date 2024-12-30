@@ -29,7 +29,7 @@ const HomePage = () => {
       {/* Image Section */}
       <div className="flex-1 relative mt-10 md:mt-24">
         <Image
-          src="/home/home-page-bg-image.png"
+          src="/home-page-bg-image.png"
           alt="Homepage illustration"
           fill
           className="object-contain"
