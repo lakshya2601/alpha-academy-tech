@@ -20,7 +20,7 @@ export const Cards: React.FC<CardData> = ({ svg, title, description }) => {
         />
       </div>
 
-      <div className="p-5 flex flex-col items-center text-center font-mona">
+      <div className="p-5  flex flex-col items-center text-center font-mona">
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
           {title}
         </h5>
