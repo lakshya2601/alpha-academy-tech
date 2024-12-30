@@ -1,16 +1,26 @@
-export const options = [
+// Define the interface for dropdown items
+interface DropdownItem {
+    name: string;
+    route: string;
+}
+
+// Define the interface for options
+interface Option {
+    label: string;
+    dropdown?: DropdownItem[];
+}
+
+// Update the options array to use the Option interface
+export const options: Option[] = [
     {
-      label: "Option 1",
+      label: "Home",
+      
+    },
+    {
+      label: "Services",
       dropdown: [
         { name: "Sub-option 1A", route: "/option1/sub1a" },
         { name: "Sub-option 1B", route: "/option1/sub1b" },
-      ],
-    },
-    {
-      label: "Option 2",
-      dropdown: [
-        { name: "Sub-option 2A", route: "/option2/sub2a" },
-        { name: "Sub-option 2B", route: "/option2/sub2b" },
       ],
     },
     {
