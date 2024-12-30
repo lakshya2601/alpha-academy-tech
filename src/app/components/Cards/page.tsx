@@ -8,7 +8,7 @@ import { CardData } from "./data";
 // Card component
 export const Cards: React.FC<CardData> = ({ svg, title, description }) => {
   return (
-    <div className="w-full h-[300px] bg-card-bg rounded-[50px] hover:shadow-xl transition-shadow duration-300">
+    <div className="w-full h-[300px] bg-white rounded-[50px] hover:shadow-xl transition-shadow duration-300">
       <div className="flex items-center justify-center">
         <Image
           src={svg}
