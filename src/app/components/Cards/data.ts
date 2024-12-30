@@ -25,7 +25,7 @@ export interface CardData {
     },
     {
         svg: "/home/growth-report-graph-svgrepo-com.svg",
-        title: "Dummy Title4",
+        title: "Dummy Title4 ",
         description:
           "Gain insights into the market trends shaping the industry in 2021.",
       },
