@@ -1,6 +1,8 @@
 import Navbar from "../components/Navbar/page";
 import HomePage from "../components/Home/page";
 import Home2 from "../components/Home/home2";
+import Home3 from "@/components/Home/home3";
+import Home4 from "@/components/Home/home4";
 
 export default function Home() {
   return (
@@ -8,6 +10,8 @@ export default function Home() {
       <Navbar />
       <HomePage />
       <Home2 />
+      <Home3 />
+      <Home4 />
     </div>
   );
 }

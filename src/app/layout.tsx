@@ -16,6 +16,19 @@ const mona = localFont({
   ],
 });
 
+const faustina = localFont({
+  variable: "--font-faustina",
+  fallback: ["sans-serif"],
+  display: "swap",
+  src: [
+    {
+      path: "./fonts/Faustina/Faustina-Italic-VariableFont_wght.ttf",
+      weight: "300",
+      style: "regular",
+    },
+  ],
+});
+
 const serifRegular = localFont({
   variable: "--font-serif",
   fallback: ["sans-serif"],
@@ -47,7 +60,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${mona.variable} ${serifRegular.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${mona.variable} ${serifRegular.variable} ${faustina.variable} antialiased`}
       >
         {children}
       </body>

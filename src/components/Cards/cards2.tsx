@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import { sampleData } from "./data";
+import { CardData2, sampleData2 } from "./data";
 import { CardData } from "./data";
 
 // Interface for the card data
@@ -14,7 +14,7 @@ export const Cards: React.FC<CardData> = ({
   subtitle,
 }) => {
   return (
-    <div className="w-[300px] h-[300px] bg-white rounded-[50px] hover:shadow-xl transition-shadow duration-300">
+    <div className="w-full h-[300px] bg-white rounded-[50px] transition-shadow duration-300">
       <div className="flex items-center justify-center">
         <Image
           src={svg}
@@ -27,13 +27,10 @@ export const Cards: React.FC<CardData> = ({
       </div>
 
       <div className="p-5 flex flex-col items-center text-center font-mona">
-        <h2 className=" text-lg font-sans font-extrabold text-black">
-          {subtitle}
-        </h2>
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
           {title}
         </h5>
-
+        <h2>{subtitle}</h2>
         <p className="mb-3 font-normal text-gray-700">{description}</p>
       </div>
     </div>
@@ -41,15 +38,15 @@ export const Cards: React.FC<CardData> = ({
 };
 
 // CardList component
-const CardList: React.FC<{ data: CardData[] }> = ({ data }) => {
+const CardList: React.FC<{ data: CardData2[] }> = ({ data }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-[100px] ">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 px-[100px]">
       {data.map((item, index) => (
         <Cards
           key={index}
           svg={item.svg}
           title={item.title}
-          subtitle={item.subtitle}
+          subtitle=""
           description={item.description}
         />
       ))}
@@ -61,7 +58,7 @@ const CardList: React.FC<{ data: CardData[] }> = ({ data }) => {
 
 // Main export for the combined component
 const CardComponent: React.FC = () => {
-  return <CardList data={sampleData} />;
+  return <CardList data={sampleData2} />;
 };
 
 export default CardComponent;
