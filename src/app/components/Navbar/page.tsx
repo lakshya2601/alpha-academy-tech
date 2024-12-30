@@ -34,8 +34,6 @@ const Navbar = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
-  
-
   const handleMouseEnter = (index: number) => setHoveredIndex(index);
   const handleContainerMouseEnter = () => setIsContainerHovered(true);
   const handleMouseLeave = () => {
@@ -97,7 +95,7 @@ const Navbar = () => {
             <div className="flex flex-row gap-2 items-center text-center justify-center">
               <div className="flex space-x-4 items-center text-center justify-center">
                 {hoveredIndex !== null &&
-                  options[hoveredIndex].dropdown.map((subOption) => (
+                  options[hoveredIndex]?.dropdown?.map((subOption) => (
                     <p
                       key={subOption.name}
                       className="text-[#033246] hover:text-black cursor-pointer font-mona transition-colors duration-300"
