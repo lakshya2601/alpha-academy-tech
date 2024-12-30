@@ -14,6 +14,7 @@ export default {
       },
       fontFamily:{
         mona:["var(--font-mona)"],
+        serifRegular:["var(--font-serif)"]
       },
       backgroundImage: {
         'navbar-bg': 'linear-gradient(180deg, rgba(19,150,170,1) 0%, rgba(255,255,255,1) 89%)',

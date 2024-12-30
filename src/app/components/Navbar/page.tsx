@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { DownIcon, MainLogo } from "../Icons";
+import { options } from "./data";
 
 interface NavbarOptionProps {
   label: string;
@@ -30,14 +32,19 @@ const Navbar = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [isContainerHovered, setIsContainerHovered] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
-  const options = ["Option 1", "Option 2", "Option 3"];
+  
 
   const handleMouseEnter = (index: number) => setHoveredIndex(index);
   const handleContainerMouseEnter = () => setIsContainerHovered(true);
   const handleMouseLeave = () => {
     setHoveredIndex(null);
     setIsContainerHovered(false);
+  };
+
+  const handleSubOptionClick = (route: string) => {
+    router.push(route);
   };
 
   useEffect(() => {
@@ -66,8 +73,8 @@ const Navbar = () => {
         <div className="text-[#033246] font-mona font-medium text-sm flex gap-6">
           {options.map((option, index) => (
             <NavbarOption
-              key={option}
-              label={option}
+              key={option.label}
+              label={option.label}
               isHovered={hoveredIndex === index}
               onHover={() => handleMouseEnter(index)}
             />
@@ -82,25 +89,23 @@ const Navbar = () => {
       {(hoveredIndex !== null || isContainerHovered) && (
         <div className="fixed inset-0 bg-backdrop-blur bg-opacity-50 z-30 pt-[100px] flex justify-center items-start ">
           <div
-            className="bg-white rounded-lg shadow-lg p-4 min-w-[200px] mt-2 border border-[#033246] text-center"
+            className="bg-white rounded-lg shadow-xl p-4 w-[80%] text-center"
             ref={containerRef}
             onMouseEnter={handleContainerMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="flex flex-col gap-2">
-              <p className="text-[#033246] font-mona font-semibold">
-                Dropdown content for {options[hoveredIndex ?? 0]}
-              </p>
-              <div className="space-y-2">
-                <p className="text-[#033246] hover:text-black cursor-pointer font-mona transition-colors duration-300">
-                  PRIVACY POLICY
-                </p>
-                <p className="text-[#033246] hover:text-black cursor-pointer font-mona transition-colors duration-300">
-                  CONTACT US
-                </p>
-                <p className="text-[#033246] hover:text-black cursor-pointer font-mona transition-colors duration-300">
-                  ABOUT US
-                </p>
+            <div className="flex flex-row gap-2 items-center text-center justify-center">
+              <div className="flex space-x-4 items-center text-center justify-center">
+                {hoveredIndex !== null &&
+                  options[hoveredIndex].dropdown.map((subOption) => (
+                    <p
+                      key={subOption.name}
+                      className="text-[#033246] hover:text-black cursor-pointer font-mona transition-colors duration-300"
+                      onClick={() => handleSubOptionClick(subOption.route)}
+                    >
+                      {subOption.name}
+                    </p>
+                  ))}
               </div>
             </div>
           </div>
