@@ -16,6 +16,19 @@ const mona = localFont({
   ],
 });
 
+const serifRegular = localFont({
+  variable: "--font-serif",
+  fallback: ["sans-serif"],
+  display: "swap",
+  src: [
+    {
+      path: "./fonts/Serif_regular/DMSerifText-Regular.ttf",
+      weight: "700",
+      style: "regular",
+    },
+  ],
+});
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -34,7 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${mona.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${mona.variable} ${serifRegular.variable} antialiased`}
       >
         {children}
       </body>
