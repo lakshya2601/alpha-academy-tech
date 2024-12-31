@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { DownIcon, MainLogo } from "../Icons";
+import { DownIcon, MainLogo, HamburgerIcon, CloseIcon } from "../Icons"; // Assume you have these icons
 import { options } from "./data";
 
 interface NavbarOptionProps {
@@ -20,7 +20,7 @@ function NavbarOption({
 }: NavbarOptionProps & { route?: string }) {
   return (
     <div
-      className={`flex gap-1 items-center hover:text-white font-bold group transition-all duration-300 cursor-pointer ${
+      className={`flex gap-1 items-center hover:text-white font-bold group transition-all duration-300 cursor-pointer text-center justify-center ${
         route ? "" : ""
       }`}
       onMouseEnter={hasSubOptions ? onHover : undefined} // Only trigger hover if sub-options exist
@@ -43,6 +43,7 @@ function NavbarOption({
 const Navbar = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [, setIsContainerHovered] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
@@ -54,6 +55,8 @@ const Navbar = () => {
 
   const handleSubOptionClick = (route: string) => {
     router.push(route);
+    handleMouseLeave();
+    setIsMobileMenuOpen(false); // Close mobile menu on navigation
   };
 
   useEffect(() => {
@@ -79,7 +82,7 @@ const Navbar = () => {
           <MainLogo className="text-slate-900 h-5" />
         </div>
 
-        <div className="text-[#033246] font-mona font-medium text-sm flex gap-6 ">
+        <div className="hidden md:flex text-[#033246] font-mona font-medium text-sm gap-6">
           {options.map((option, index) => (
             <NavbarOption
               key={option.label}
@@ -91,7 +94,17 @@ const Navbar = () => {
             />
           ))}
         </div>
-        <button className="px-4 py-2 bg-[#033246] text-white font-mona font-semibold text-sm rounded-lg hover:bg-white hover:text-[#033246] hover:border hover:border-[#033246] transition-colors duration-300">
+
+        <div className="md:hidden">
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="text-[#033246] focus:outline-none"
+          >
+            {isMobileMenuOpen ? <CloseIcon /> : <HamburgerIcon />}
+          </button>
+        </div>
+
+        <button className="hidden md:block px-4 py-2 bg-[#033246] text-white font-mona font-semibold text-sm rounded-lg hover:bg-white hover:text-[#033246] hover:border hover:border-[#033246] transition-colors duration-300">
           Button Here
         </button>
       </nav>
@@ -120,6 +133,33 @@ const Navbar = () => {
             </div>
           </div>
         )}
+
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 bg-white z-30 md:pt-[100px] flex flex-col items-center justify-center text-center  text-4xl">
+          {options.map((option, index) => (
+            <div key={option.label} className="w-full ">
+              <NavbarOption
+                label={option.label}
+                isHovered={hoveredIndex === index}
+                onHover={() => handleMouseEnter(index)}
+                hasSubOptions={!!option.dropdown} // Check for sub-options
+                route={option.route} // Pass the route
+              />
+              {hoveredIndex === index &&
+                option.dropdown &&
+                option.dropdown.map((subOption) => (
+                  <p
+                    key={subOption.name}
+                    className="pl-4 text-[#033246] hover:text-black cursor-pointer font-mona transition-colors duration-300 font-semibold text-sm"
+                    onClick={() => handleSubOptionClick(subOption.route)}
+                  >
+                    {subOption.name}
+                  </p>
+                ))}
+            </div>
+          ))}
+        </div>
+      )}
     </>
   );
 };
