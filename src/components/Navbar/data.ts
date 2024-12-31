@@ -18,18 +18,32 @@ export const options: Option[] = [
       route: "/", // Add a route for Home
     },
     {
+      label: "Our Firm",
+      route: "/our-firm"
+      // dropdown: [
+      //   { name: "Sub-option 1A", route: "/option1/sub1a" },
+      //   { name: "Sub-option 1B", route: "/option1/sub1b" },
+      // ],
+    },
+    {
       label: "Services",
+      route:"/services",
+      // dropdown: [
+      //   { name: "Sub-option 3A", route: "/option3/sub3a" },
+      //   { name: "Sub-option 3B", route: "/option3/sub3b" },
+      // ],
+    },
+    {
+      label: "Pricing",
+      
       dropdown: [
-        { name: "Sub-option 1A", route: "/option1/sub1a" },
-        { name: "Sub-option 1B", route: "/option1/sub1b" },
+        { name: "Payments", route: "/option3/sub3a" },
+        
       ],
     },
     {
-      label: "Option 3",
-      dropdown: [
-        { name: "Sub-option 3A", route: "/option3/sub3a" },
-        { name: "Sub-option 3B", route: "/option3/sub3b" },
-      ],
+      label: "Contact Us",
+      route: "/ContactUs", // Add a route for Home
     },
   ];
   
