@@ -1,4 +1,6 @@
 "use client";
+
+import Image from "next/image";
 import React, { useState } from "react";
 
 const ContactUs = () => {
@@ -59,17 +61,19 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex items-center justify-between bg-[#f8f7f7] px-[200px]">
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-8 rounded-lg shadow-md w-full max-w-md"
+        className="bg-white p-8 rounded-xl shadow-2xl w-full max-w-md "
       >
-        <h2 className="text-2xl font-bold mb-6 text-gray-800">Contact Us</h2>
+        <h2 className="text-2xl font-bold mb-6 text-foreground text-center">
+          Contact Us
+        </h2>
 
         <div className="mb-4">
           <label
             htmlFor="name"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-gray-700 font-sans"
           >
             Name
           </label>
@@ -80,14 +84,14 @@ const ContactUs = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full mt-1 p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+            className="w-full mt-1 p-2 rounded-md bg-[#f2f2f3]"
           />
         </div>
 
         <div className="mb-4">
           <label
             htmlFor="email"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-gray-700 font-sans"
           >
             Email
           </label>
@@ -98,14 +102,14 @@ const ContactUs = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full mt-1 p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+            className="w-full mt-1 p-2 rounded-md bg-[#f2f2f3]"
           />
         </div>
 
         <div className="mb-4">
           <label
             htmlFor="phone"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-gray-700 font-sans"
           >
             Phone Number
           </label>
@@ -116,14 +120,14 @@ const ContactUs = () => {
             value={formData.phone}
             onChange={handleChange}
             required
-            className="w-full mt-1 p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+            className="w-full mt-1 p-2 rounded-md bg-[#f2f2f3]"
           />
         </div>
 
         <div className="mb-6">
           <label
             htmlFor="feedback"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-gray-700 font-sans"
           >
             Feedback
           </label>
@@ -132,23 +136,42 @@ const ContactUs = () => {
             name="feedback"
             value={formData.feedback}
             onChange={handleChange}
-            required
             rows={4}
-            className="w-full mt-1 p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+            className="w-full mt-1 p-2 rounded-md bg-[#f2f2f3]"
           ></textarea>
         </div>
 
         <button
           type="submit"
-          className="w-full bg-indigo-500 text-white p-2 rounded-md hover:bg-indigo-600 transition-colors"
+          className="px-4 py-2 w-full bg-[#033246] text-white font-mona font-semibold text-sm rounded-lg hover:bg-white hover:text-[#033246] hover:border hover:border-[#033246] transition-colors duration-300"
         >
           Submit
         </button>
 
         {status && (
-          <p className="mt-4 text-sm text-center text-green-600">{status}</p>
+          <p className="mt-4 text-base font-sans text-center text-green-600">
+            {status}
+          </p>
         )}
       </form>
+      <div className="w-[40%] text-foreground gap-2 h-screen flex flex-col items-start justify-center text-xs">
+        <Image
+          src="/dummy-image.jpg"
+          alt="dummyimage"
+          height={500}
+          width={500}
+          loading="lazy"
+          className="object-fill"
+        />
+        *dummy image to be changed*
+        <h1 className="text-base md:text-2xl font-serifRegular ">
+          Address here Address here Address here Address here Address here
+        </h1>
+        <h2 className="text-base font-mona">
+          Gmail here gmail here gmail here(clickable ).
+        </h2>
+        <h3 className="font-mona text-base">Phone number here</h3>
+      </div>
     </div>
   );
 };
