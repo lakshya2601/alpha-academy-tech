@@ -44,8 +44,10 @@ const Footer = () => {
         </nav>
 
         <div className="text-center md:text-right font-sans">
-          <p className="text-sm">Contact us at:</p>
-          <p className="font-bold">Email here</p>
+          <p className="font-bold">Contact us at:</p>
+          <p className="text-sm">alphaacademy.tech1@gmail.com</p>
+          <p className="font-sm">7049298061</p>
+
           <div className="flex justify-center md:justify-end mt-4 space-x-4">
             <a href="#" aria-label="Facebook" className="hover:text-gray-300">
               <i className="fab fa-facebook-f"></i>

@@ -19,7 +19,7 @@ export const options: Option[] = [
     },
     {
       label: "Our Firm",
-      route: "/our-firm"
+      route: "/OurFirm"
       // dropdown: [
       //   { name: "Sub-option 1A", route: "/option1/sub1a" },
       //   { name: "Sub-option 1B", route: "/option1/sub1b" },
@@ -27,7 +27,7 @@ export const options: Option[] = [
     },
     {
       label: "Services",
-      route:"/services",
+      route:"/Services",
       // dropdown: [
       //   { name: "Sub-option 3A", route: "/option3/sub3a" },
       //   { name: "Sub-option 3B", route: "/option3/sub3b" },
