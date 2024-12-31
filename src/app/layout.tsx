@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import localFont from "next/font/local";
+import Navbar from "@/components/Navbar";
 
 const mona = localFont({
   variable: "--font-mona",
@@ -62,6 +63,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${mona.variable} ${serifRegular.variable} ${faustina.variable} antialiased`}
       >
+        <Navbar />
         {children}
       </body>
     </html>
