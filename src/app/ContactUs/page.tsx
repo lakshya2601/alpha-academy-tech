@@ -23,16 +23,6 @@ const ContactUs = () => {
     e.preventDefault();
 
     try {
-      // const response = await fetch(
-      //   "https://script.google.com/macros/s/AKfycbxbKR5jE3dwyuhDDE057LpBAwWLBsutW9GO2k99Mt8Ov6lY7qya_hci_FacIBkbLurRsA/exec",
-      //   {
-      //     method: "POST",
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //     body: JSON.stringify(formData),
-      //   }
-      // );
       const response = await fetch(
         "https://script.google.com/macros/s/AKfycbxbKR5jE3dwyuhDDE057LpBAwWLBsutW9GO2k99Mt8Ov6lY7qya_hci_FacIBkbLurRsA/exec",
         {
@@ -56,15 +46,26 @@ const ContactUs = () => {
       }
     } catch (error) {
       console.error(error); // Log the error for debugging
-      setStatus(`Thank you! We will contact you soon.`);
+      setStatus("Thank you! We will contact you soon.");
     }
   };
 
+  const handleEmailClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    e.preventDefault();
+    window.open(
+      "mailto:alphaacademy.tech1@gmail.com",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-between bg-[#f8f7f7] px-[200px]">
+    <div className="min-h-screen flex flex-col md:flex-row items-center justify-between bg-[#f8f7f7] px-4 md:px-40">
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-8 rounded-xl shadow-2xl w-full max-w-md "
+        className="bg-white p-8 rounded-xl shadow-2xl w-full max-w-md md:max-w-lg"
       >
         <h2 className="text-2xl font-bold mb-6 text-foreground text-center">
           Contact Us
@@ -154,23 +155,28 @@ const ContactUs = () => {
           </p>
         )}
       </form>
-      <div className="w-[40%] text-foreground gap-2 h-screen flex flex-col items-start justify-center text-xs">
+
+      <div className="w-full md:w-1/3 flex flex-col items-center md:items-start justify-center mt-8 md:mt-0 md:px-8">
         <Image
           src="/dummy-image.jpg"
-          alt="dummyimage"
-          height={500}
-          width={500}
+          alt="dummy image"
+          height={300}
+          width={300}
           loading="lazy"
           className="object-fill"
         />
-        *dummy image to be changed*
-        <h1 className="text-base md:text-2xl font-serifRegular ">
+        <p className="text-xs mt-2">*dummy image to be changed*</p>
+        <h1 className="text-base md:text-2xl font-serifRegular mt-4 text-center md:text-left">
           Address here Address here Address here Address here Address here
         </h1>
-        <h2 className="text-base font-mona">
-          Gmail here gmail here gmail here(clickable ).
-        </h2>
-        <h3 className="font-mona text-base">Phone number here</h3>
+        <a
+          href="mailto:alphaacademy.tech1@gmail.com"
+          className="text-base font-mona mt-4"
+          onClick={handleEmailClick}
+        >
+          alphaacademy.tech1@gmail.com
+        </a>
+        <h3 className="font-mona text-base mt-2">+91-7049298061</h3>
       </div>
     </div>
   );
