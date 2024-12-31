@@ -21,7 +21,7 @@ function NavbarOption({
   return (
     <div
       className={`flex gap-1 items-center hover:text-white font-bold group transition-all duration-300 cursor-pointer ${
-        route ? "underline" : ""
+        route ? "" : ""
       }`}
       onMouseEnter={hasSubOptions ? onHover : undefined} // Only trigger hover if sub-options exist
       onClick={route ? () => (window.location.href = route) : undefined} // Navigate to the route if it exists
@@ -29,7 +29,7 @@ function NavbarOption({
       <span>{label}</span>
       {hasSubOptions && ( // Show arrow icon only if sub-options exist
         <span
-          className={`transition-transform duration-300 ${
+          className={`transition-transform duration-300  ${
             isHovered ? "rotate-180" : ""
           }`}
         >
@@ -42,7 +42,7 @@ function NavbarOption({
 
 const Navbar = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [ , setIsContainerHovered] = useState(false);
+  const [, setIsContainerHovered] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
@@ -79,7 +79,7 @@ const Navbar = () => {
           <MainLogo className="text-slate-900 h-5" />
         </div>
 
-        <div className="text-[#033246] font-mona font-medium text-sm flex gap-6" >
+        <div className="text-[#033246] font-mona font-medium text-sm flex gap-6 ">
           {options.map((option, index) => (
             <NavbarOption
               key={option.label}
@@ -109,7 +109,7 @@ const Navbar = () => {
                   {options[hoveredIndex]?.dropdown?.map((subOption) => (
                     <p
                       key={subOption.name}
-                      className="text-[#033246] hover:text-black cursor-pointer font-mona transition-colors duration-300"
+                      className="text-[#033246] hover:text-black cursor-pointer font-mona transition-colors duration-300 font-semibold text-sm"
                       onClick={() => handleSubOptionClick(subOption.route)}
                     >
                       {subOption.name}
