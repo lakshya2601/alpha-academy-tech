@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import React from "react";
 
 const Footer = () => {
@@ -5,49 +7,53 @@ const Footer = () => {
 
   return (
     <footer className="w-full bg-[#033347] text-white py-8">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-start ">
-        <div className="mb-6 md:mb-0 font-serifRegular">
-          <h2 className="text-2xl font-bold">Alpha academy</h2>
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center md:items-start space-y-8 md:space-y-0 px-4 sm:px-8">
+        {/* Left Section */}
+        <div className="text-center md:text-left font-serifRegular">
+          <h2 className="text-2xl font-bold">Alpha Academy</h2>
           <p className="text-sm mt-2">
             Striving for excellence in everything we do.
           </p>
         </div>
 
-        <nav className="mb-6 md:mb-0 w-full md:w-auto -translate-x-16 font-sans">
-          <ul className="grid grid-cols-1 gap-2 text-center md:text-left">
+        {/* Navigation Section */}
+        <nav className="w-full md:w-auto text-center md:text-left font-sans">
+          <ul className="grid grid-cols-1 gap-2">
             <li>
-              <a href="/ " className="hover:text-gray-300">
+              <Link href="/" className="hover:text-gray-300">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#about" className="hover:text-gray-300">
+              <Link href="/OurFirm" className="hover:text-gray-300">
                 Our Firm
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#services" className="hover:text-gray-300">
+              <Link href="/Services" className="hover:text-gray-300">
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#services" className="hover:text-gray-300">
+              <Link href="/Pricing/Payments" className="hover:text-gray-300">
                 Pricing
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/ContactUs" className="hover:text-gray-300">
+              <Link href="/ContactUs" className="hover:text-gray-300">
                 Contact Us
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
 
+        {/* Contact Section */}
         <div className="text-center md:text-right font-sans">
           <p className="font-bold">Contact us at:</p>
           <p className="text-sm">alphaacademy.tech1@gmail.com</p>
-          <p className="font-sm">7049298061</p>
+          <p className="text-sm">7049298061</p>
 
+          {/* Social Icons */}
           <div className="flex justify-center md:justify-end mt-4 space-x-4">
             <a href="#" aria-label="Facebook" className="hover:text-gray-300">
               <i className="fab fa-facebook-f"></i>
@@ -62,6 +68,7 @@ const Footer = () => {
         </div>
       </div>
 
+      {/* Footer Bottom */}
       <div className="mt-8 text-center border-t border-gray-600 pt-4 text-sm font-sans">
         <p>&copy; {currentYear} Alpha Academy. All Rights Reserved.</p>
       </div>

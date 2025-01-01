@@ -37,7 +37,7 @@ export const options: Option[] = [
       label: "Pricing",
       
       dropdown: [
-        { name: "Payments", route: "/option3/sub3a" },
+        { name: "Payments", route: "/Pricing/Payments" },
         
       ],
     },
