@@ -62,7 +62,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row items-center justify-between bg-[#f8f7f7] px-4 md:px-40">
+    <div className="min-h-screen flex flex-col md:flex-row items-center justify-between bg-[#f8f7f7] pt-[100px] px-4 md:px-40 ">
       <form
         onSubmit={handleSubmit}
         className="bg-white p-8 rounded-xl shadow-2xl w-full max-w-md md:max-w-lg"

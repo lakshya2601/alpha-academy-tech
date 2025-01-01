@@ -20,7 +20,7 @@ function NavbarOption({
 }: NavbarOptionProps & { route?: string }) {
   return (
     <div
-      className={`flex gap-1 items-center hover:text-white font-bold group transition-all duration-300 cursor-pointer text-center justify-center ${
+      className={`flex gap-1 items-center md:hover:text-white font-bold group transition-all duration-300 cursor-pointer text-center justify-center ${
         route ? "" : ""
       }`}
       onMouseEnter={hasSubOptions ? onHover : undefined} // Only trigger hover if sub-options exist
@@ -135,7 +135,7 @@ const Navbar = () => {
         )}
 
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-white z-30 md:pt-[100px] flex flex-col items-center justify-center text-center  text-4xl">
+        <div className="fixed inset-0 bg-white z-30 md:pt-[100px] flex flex-col items-center justify-center text-center text-4xl">
           {options.map((option, index) => (
             <div key={option.label} className="w-full ">
               <NavbarOption
@@ -146,16 +146,20 @@ const Navbar = () => {
                 route={option.route} // Pass the route
               />
               {hoveredIndex === index &&
-                option.dropdown &&
-                option.dropdown.map((subOption) => (
-                  <p
-                    key={subOption.name}
-                    className="pl-4 text-[#033246] hover:text-black cursor-pointer font-mona transition-colors duration-300 font-semibold text-sm"
-                    onClick={() => handleSubOptionClick(subOption.route)}
-                  >
-                    {subOption.name}
-                  </p>
-                ))}
+                option.dropdown && ( // Ensure dropdown is checked
+                  <div className="flex flex-col">
+                    {/* Added a wrapper for dropdown items */}
+                    {option.dropdown.map((subOption) => (
+                      <p
+                        key={subOption.name}
+                        className="pl-4 text-[#033246] hover:text-black cursor-pointer font-mona transition-colors duration-300 font-semibold text-3xl"
+                        onClick={() => handleSubOptionClick(subOption.route)}
+                      >
+                        {subOption.name}
+                      </p>
+                    ))}
+                  </div>
+                )}
             </div>
           ))}
         </div>
