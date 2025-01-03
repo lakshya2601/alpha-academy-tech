@@ -104,7 +104,7 @@ const Payments = () => {
       </h2>
 
       {/* Pricing Cards */}
-      <div className="flex flex-col sm:flex-row flex-wrap gap-6 w-full items-center justify-center">
+      <div className="flex flex-col sm:flex-row flex-wrap gap-6 w-full items-center justify-center         ">
         {plans.map((plan) => (
           <PricingCard
             key={plan.title}
