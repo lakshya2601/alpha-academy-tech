@@ -12,7 +12,7 @@ const Home2 = () => {
           in Nutshell
         </h1>
         <div className="text-xl md:text-3xl font-thin italic font-faustina">
-          &quot;A great quote will be here&quot;
+          &quot;Your financial goals, our expert roadmap.&quot;
         </div>
       </div>
 
