@@ -14,27 +14,26 @@ export const Cards: React.FC<CardData> = ({
   subtitle,
 }) => {
   return (
-    <div className="w-[300px] h-[300px] bg-white rounded-[50px] hover:shadow-xl transition-shadow duration-300">
-      <div className="flex items-center justify-center">
+    <div className="w-[300px] min-h-[400px] bg-white rounded-[20px] hover:shadow-xl transition-shadow duration-300 flex flex-col justify-between p-8">
+      <div className="flex items-center justify-center py-6">
         <Image
           src={svg}
           alt={title}
-          className="object-contain p-5 w-20 h-20"
-          width={80}
-          height={80}
+          className="object-contain w-24 h-24"
+          width={96}
+          height={96}
           priority
         />
       </div>
 
-      <div className="p-5 flex flex-col items-center text-center font-mona">
-        <h2 className=" text-lg font-sans font-extrabold text-black">
+      <div className="flex flex-col items-center text-center space-y-4 font-mona">
+        <h2 className="text-lg font-sans font-extrabold text-black">
           {subtitle}
         </h2>
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+        <h5 className="text-2xl font-bold tracking-tight text-gray-900">
           {title}
         </h5>
-
-        <p className="mb-3 font-normal text-gray-700">{description}</p>
+        <p className="text-base font-normal text-gray-700">{description}</p>
       </div>
     </div>
   );

@@ -8,24 +8,24 @@ export interface CardData {
   export const sampleData: CardData[] = [
     {
       svg: "/spiral-32-svgrepo-com.svg",
-      title: "Dummy Title",
-      subtitle: "subtitle1",
+      title: "RRR (Risk Reward Ratio)",
+      subtitle: "Risk Management",
       description:
-        "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
+        "The risk-reward ratio is the cornerstone of smart investing—taking calculated risks can lead to greater rewards, but understanding and managing those risks is what ensures long-term success.",
     },
     {
       svg: "/spiral-32-svgrepo-com.svg",
-      title: "Dummy Title2",
-      subtitle: "subtitle1",
+      title: "Experienced R&D Team",
+      subtitle: "Research Excellence",
       description:
-        "Discover key analytics and metrics that drove enterprise success in 2021.",
+        "In the stock market, an experienced R&D team is like a compass—analyzing trends, uncovering opportunities, and navigating risks to drive informed investment decisions.",
     },
     {
       svg: "/spiral-32-svgrepo-com.svg",
-      title: "Dummy Title3",
-      subtitle: "subtitle1",
+      title: "Back Tested Strategies",
+      subtitle: "Proven Methods",
       description:
-        "Gain insights into the market trends shaping the industry in 2021.",
+        "Back tested strategies transform market data into confidence—because past performance refines future success.",
     },
     // {
     //     svg: "/spiral-32-svgrepo-com.svg",
@@ -48,30 +48,30 @@ export interface CardData {
   export const sampleData2: CardData2[] = [
     {
       svg: "/spiral-32-svgrepo-com.svg",
-      title: "Dummy title",
+      title: "Smart Financial Planning",
       subtitle: "",
       description:
-        "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
+        "Build a strong financial foundation with expert planning and strategy.",
     },
     {
       svg: "/spiral-32-svgrepo-com.svg",
-      title: "Dummy Title2",
+      title: "Data-Driven Investment Strategies",
       subtitle: "",
       description:
-        "Discover key analytics and metrics that drove enterprise success in 2021.",
+        "Leverage key market analytics and insights to make informed investment decisions.",
     },
     {
       svg: "/spiral-32-svgrepo-com.svg",
-      title: "Dummy Title3",
+      title: "Market Trends & Insights",
       subtitle: "",
       description:
-        "Gain insights into the market trends shaping the industry in 2021.",
+        "Stay ahead with deep analysis of financial market movements and opportunities.",
     },
     {
         svg: "/spiral-32-svgrepo-com.svg",
-        title: "Dummy Title4 ",
+        title: "Wealth Growth & Security",
         subtitle: "",
         description:
-          "Gain insights into the market trends shaping the industry in 2021.",
+          "Optimize and protect your wealth with long-term financial strategies tailored to your goals.",
       },
   ];
