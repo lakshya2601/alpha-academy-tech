@@ -82,7 +82,7 @@ const Services = () => {
           </div>
           <div className="relative z-10 flex justify-center">
             <Image
-              src="/circle-svgrepo-com.svg"
+              src="/ChatGPT Image Apr 9, 2025, 11_08_35 PM.png"
               alt="Investment Solutions"
               width={400}
               height={400}
@@ -122,7 +122,7 @@ const Services = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                $<AnimatedNumber value={salesData.total} />
+                ₹<AnimatedNumber value={salesData.total} />
               </motion.div>
               <div className="grid grid-cols-2 gap-6 mt-4">
                 <motion.div
@@ -131,7 +131,7 @@ const Services = () => {
                   className="p-3 rounded-lg hover:bg-gray-50 transition-colors duration-300"
                 >
                   <div className="text-sm text-gray-500 mb-1">Gross Sales</div>
-                  <div className="text-xl font-semibold text-[#033347]">${salesData.gross}</div>
+                  <div className="text-xl font-semibold text-[#033347]">₹{salesData.gross}</div>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
@@ -225,7 +225,7 @@ const Services = () => {
             <div className="relative">
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-yellow-300 -z-10"></div>
               <Image
-                src="/dummy-image.jpg"
+                src="/ChatGPT Image Apr 9, 2025, 07_51_17 PM.png"
                 alt="Portfolio Management"
                 width={600}
                 height={400}
@@ -255,7 +255,7 @@ const Services = () => {
             <div className="relative md:order-last">
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-yellow-300 -z-10"></div>
               <Image
-                src="/dummy-image.jpg"
+                src="/ChatGPT Image Apr 9, 2025, 10_45_59 PM.png"
                 alt="Market Analysis"
                 width={600}
                 height={400}
@@ -269,7 +269,7 @@ const Services = () => {
             <div className="relative">
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-yellow-300 -z-10"></div>
               <Image
-                src="/dummy-image.jpg"
+                src="/ChatGPT Image Apr 9, 2025, 10_39_48 PM.png"
                 alt="Wealth Planning"
                 width={600}
                 height={400}

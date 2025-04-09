@@ -47,70 +47,89 @@ const OurFirm = () => {
                   title: "Investment Education", 
                   desc: "Empowering clients with knowledge and insights to make informed investment decisions through comprehensive educational resources.",
                   svg: (
-                    <svg className="w-16 h-16 mb-6" viewBox="0 0 100 100">
-                      <path d="M20 80 L50 30 L80 80" stroke="#033347" strokeWidth="4" fill="none"/>
-                      <circle cx="50" cy="30" r="10" fill="#033347"/>
-                      <path d="M35 60 L65 60" stroke="#033347" strokeWidth="4"/>
-                    </svg>
+                    <Image
+                      src="/wired-outline-453-savings-pig-hover-pinch.gif"
+                      alt="Investment Education"
+                      width={94}
+                      height={94}
+                      className="mb-6"
+                      priority
+                    />
                   )
                 },
                 { 
                   title: "Risk Management", 
                   desc: "Implementing robust risk assessment strategies to protect and optimize your investment portfolio in any market condition.",
                   svg: (
-                    <svg className="w-16 h-16 mb-6" viewBox="0 0 100 100">
-                      <path d="M50 10 L90 50 L50 90 L10 50 Z" fill="#033347"/>
-                      <path d="M35 45 L45 65 L65 35" stroke="#effcfd" strokeWidth="4" fill="none"/>
-                    </svg>
+                    <Image
+                      src="/wired-outline-942-driving-person-sleepy-hover-pinch.gif"
+                      alt="Investment Education"
+                      width={94}
+                      height={94}
+                      className="mb-6"
+                      priority
+                    />
                   )
                 },
                 { 
                   title: "Market Analysis", 
                   desc: "Utilizing advanced analytics and research to identify market trends and investment opportunities for optimal returns.",
                   svg: (
-                    <svg className="w-16 h-16 mb-6" viewBox="0 0 100 100">
-                      <path d="M10 70 L30 50 L50 60 L70 30 L90 40" stroke="#033347" strokeWidth="4" fill="none"/>
-                      <circle cx="30" cy="50" r="3" fill="#033347"/>
-                      <circle cx="50" cy="60" r="3" fill="#033347"/>
-                      <circle cx="70" cy="30" r="3" fill="#033347"/>
-                    </svg>
+                    <Image
+                      src="/wired-outline-153-bar-chart-hover-growth.gif"
+                      alt="Investment Education"
+                      width={94}
+                      height={94}
+                      className="mb-6"
+                      priority
+                    />
                   )
                 },
                 { 
                   title: "Client Relationships", 
                   desc: "Building strong, lasting partnerships through transparent communication and personalized investment strategies.",
                   svg: (
-                    <svg className="w-16 h-16 mb-6" viewBox="0 0 100 100">
-                      <circle cx="35" cy="40" r="15" fill="#033347"/>
-                      <circle cx="65" cy="40" r="15" fill="#033347"/>
-                      <path d="M20 80 C35 65, 65 65, 80 80" fill="#033347"/>
-                    </svg>
+                    <Image
+                      src="/wired-outline-955-demand-hover-click.gif"
+                      alt="Investment Education"
+                      width={94}
+                      height={94}
+                      className="mb-6"
+                      priority
+                    />
                   )
                 },
                 { 
                   title: "Crisis Management", 
                   desc: "Expert guidance and strategic planning to navigate market volatility and economic uncertainties effectively.",
                   svg: (
-                    <svg className="w-16 h-16 mb-6" viewBox="0 0 100 100">
-                      <path d="M50 10 L90 90 L10 90 Z" stroke="#033347" strokeWidth="4" fill="none"/>
-                      <line x1="50" y1="35" x2="50" y2="65" stroke="#033347" strokeWidth="4"/>
-                      <circle cx="50" cy="75" r="3" fill="#033347"/>
-                    </svg>
+                    <Image
+                      src="/wired-outline-678-fireman-hover-pinch.gif"
+                      alt="Investment Education"
+                      width={94}
+                      height={94}
+                      className="mb-6"
+                      priority
+                    />
                   )
                 },
                 { 
                   title: "Sustainable Growth", 
                   desc: "Focusing on long-term value creation through environmentally and socially responsible investment strategies.",
                   svg: (
-                    <svg className="w-16 h-16 mb-6" viewBox="0 0 100 100">
-                      <path d="M50 90 C20 90, 20 50, 50 50 C80 50, 80 10, 50 10" stroke="#033347" strokeWidth="4" fill="none"/>
-                      <circle cx="50" cy="50" r="5" fill="#033347"/>
-                    </svg>
+                    <Image
+                      src="/wired-outline-1827-growing-plant-hover-pinch.gif"
+                      alt="Investment Education"
+                      width={94}
+                      height={94}
+                      className="mb-6"
+                      priority
+                    />
                   )
                 }
               ].map((value, index) => (
                 <div key={index} className="p-8 bg-gradient-to-br from-white to-[#effcfd] rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center">
-                  <div className="bg-white rounded-full p-4 shadow-sm mb-6">
+                  <div className="bg-white rounded-full p-4 shadow-sm">
                     {value.svg}
                   </div>
                   <h3 className="text-2xl font-bold text-[#033347] mb-4">{value.title}</h3>
@@ -121,7 +140,7 @@ const OurFirm = () => {
           </div>
 
           {/* Team Section */}
-          <div className="mt-16">
+          {/* <div className="mt-16">
             <h2 className="text-3xl font-bold text-gray-800 text-center mb-10">
               Our Team
             </h2>
@@ -159,7 +178,7 @@ const OurFirm = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 

@@ -158,14 +158,14 @@ const ContactUs = () => {
 
       <div className="w-full md:w-1/3 flex flex-col items-center md:items-start justify-center mt-8 md:mt-0 md:px-8">
         <Image
-          src="/dummy-image.jpg"
+          src="/wired-outline-981-consultation-hover-conversation-alt.gif"
           alt="dummy image"
           height={300}
           width={300}
           loading="lazy"
           className="object-fill"
         />
-        <p className="text-xs mt-2">*dummy image to be changed*</p>
+       
         <h1 className="text-base md:text-2xl font-serifRegular mt-4 text-center md:text-left">
           Address here Address here Address here Address here Address here
         </h1>
