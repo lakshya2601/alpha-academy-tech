@@ -4,7 +4,7 @@ import { WingLogo } from "../Icons";
 
 const HomePage = () => {
   return (
-    <div className="h-full md:h-screen w-full flex flex-col md:flex-row">
+    <div className="mt-[80px] md:mt-0 h-full md:h-screen w-full flex flex-col md:flex-row">
       {/* Text Content Section */}
       <div className="flex flex-col items-start justify-center px-6 md:pl-20 py-10 md:py-16 text-[#033246] h-full md:w-[45%] space-y-5">
         <h1 className="text-3xl md:text-6xl font-extrabold leading-snug md:leading-[74px] font-serifRegular">

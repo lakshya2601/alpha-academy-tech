@@ -1,8 +1,9 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { DownIcon, MainLogo, HamburgerIcon, CloseIcon } from "../Icons"; // Assume you have these icons
+import { DownIcon, HamburgerIcon, CloseIcon } from "../Icons"; // Assume you have these icons
 import { options } from "./data";
+import Link from "next/link";
 
 interface NavbarOptionProps {
   label: string;
@@ -78,10 +79,16 @@ const Navbar = () => {
   return (
     <>
       <nav className="flex w-full h-[100px] justify-between bg-navbar-bg items-center fixed px-10 z-40">
-        <div className="text-[#033246] font-mona font-semibold text-sm">
-          <MainLogo className="text-slate-900 h-5" />
+        <div className="text-[#033246] font-mona font-semibold text-sm flex flex-col items-center justify-center">
+         <Link href="/"><div className="text-lg flex items-center gap-1">
+            <span className="text-7xl flex items-center -translate-y-1.5">α</span>
+            <div className="flex flex-col justify-center"> 
+              <span className="leading-tight">Alpha</span>
+              <span className="text-lg leading-tight">Academy</span>
+            </div>
+          </div></Link>
+          
         </div>
-
         <div className="hidden md:flex text-[#033246] font-mona font-medium text-sm gap-6">
           {options.map((option, index) => (
             <NavbarOption
@@ -104,8 +111,8 @@ const Navbar = () => {
           </button>
         </div>
 
-        <button className="hidden md:block px-4 py-2 bg-[#033246] text-white font-mona font-semibold text-sm rounded-lg hover:bg-white hover:text-[#033246] hover:border hover:border-[#033246] transition-colors duration-300">
-          Button Here
+        <button className="hidden md:block px-4 py-2 ">
+          {/* Button Here */}
         </button>
       </nav>
 
@@ -135,33 +142,61 @@ const Navbar = () => {
         )}
 
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-white z-30 md:pt-[100px] flex flex-col items-center justify-center text-center text-4xl">
-          {options.map((option, index) => (
-            <div key={option.label} className="w-full ">
-              <NavbarOption
-                label={option.label}
-                isHovered={hoveredIndex === index}
-                onHover={() => handleMouseEnter(index)}
-                hasSubOptions={!!option.dropdown} // Check for sub-options
-                route={option.route} // Pass the route
-              />
-              {hoveredIndex === index &&
-                option.dropdown && ( // Ensure dropdown is checked
-                  <div className="flex flex-col">
-                    {/* Added a wrapper for dropdown items */}
-                    {option.dropdown.map((subOption) => (
-                      <p
-                        key={subOption.name}
-                        className="pl-4 text-[#033246] hover:text-black cursor-pointer font-mona transition-colors duration-300 font-semibold text-3xl"
-                        onClick={() => handleSubOptionClick(subOption.route)}
-                      >
-                        {subOption.name}
-                      </p>
-                    ))}
+        <div 
+          className={`fixed inset-0 bg-white z-30 transform transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        >
+          <div className="flex flex-col h-full pt-[120px] px-6 overflow-y-auto">
+            {options.map((option, index) => {
+              if (option.label === "Pricing" && option.dropdown) {
+                return option.dropdown.map((subOption) => (
+                  <div 
+                    key={subOption.name} 
+                    className="mb-6 border-b border-gray-100 last:border-b-0 pb-4"
+                  >
+                    <button
+                      className="flex gap-1 items-center md:hover:text-white font-bold group transition-all duration-300 cursor-pointer text-center justify-center "
+                      onClick={() => handleSubOptionClick(subOption.route)}
+                    >
+                      {subOption.name}
+                    </button>
                   </div>
-                )}
-            </div>
-          ))}
+                ));
+              }
+              
+              return (
+                <div 
+                  key={option.label} 
+                  className="mb-6 border-b border-gray-100 last:border-b-0 pb-4"
+                >
+                  <div 
+                    className="flex justify-between items-center py-2"
+                    onClick={() => !option.route && handleMouseEnter(index)}
+                  >
+                    <NavbarOption
+                      label={option.label}
+                      isHovered={hoveredIndex === index}
+                      onHover={() => {}}
+                      hasSubOptions={!!option.dropdown}
+                      route={option.route}
+                    />
+                  </div>
+                  {hoveredIndex === index && option.dropdown && (
+                    <div className="flex flex-col space-y-4 mt-3 pl-4 animate-fadeIn">
+                      {option.dropdown.map((subOption) => (
+                        <button
+                          key={subOption.name}
+                          className="text-[#033246] text-left text-lg font-mona hover:text-black active:scale-95 transform transition-all duration-200 py-2"
+                          onClick={() => handleSubOptionClick(subOption.route)}
+                        >
+                          {subOption.name}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
       )}
     </>
