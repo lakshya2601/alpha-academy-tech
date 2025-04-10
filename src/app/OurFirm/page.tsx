@@ -11,38 +11,42 @@ const OurFirm = () => {
 
           {/* Mission Section */}
           <div
-            className="w-full mx-auto space-y-12 h-[700px] md:h-[428px]"
+            className="flex items-start justify-center w-full mx-auto space-y-12 h-[calc(100vh-70px)] relative"
             style={{
               background: 'linear-gradient(0deg, rgba(3,51,71,1) 0%, rgba(255,255,255,0) 100%)',
             }}
           >
-            <div className="relative flex flex-col md:flex-row items-center justify-between gap-12 p-6 sm:p-8 rounded-xl max-w-7xl mx-auto">
-              <div className="md:w-1/2 space-y-6 text-center md:text-left">
-                <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">About Alpha Academy</h2>
-                <p className=" text-gray-800 md:text-white text-base sm:text-lg leading-relaxed z-10">
-                Welcome to Alpha Academy! We are committed to delivering exceptional services that empower individuals and organizations to achieve their goals and aspirations.
-                </p>
-              </div>
+            <div className="relative flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-4 md:mt-[120px] space-y-10 md:space-y-0">
+  {/* Text Section */}
+  <div className="md:w-1/2 space-y-8 text-center md:text-left">
+    <h2 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold text-gray-800 leading-tight">
+      About Alpha Academy
+    </h2>
+    <p className="text-gray-800 md:text-white text-lg sm:text-2xl lg:text-3xl leading-relaxed">
+      Welcome to Alpha Academy! We are committed to delivering exceptional services that empower individuals and organizations to achieve their goals and aspirations.
+    </p>
+  </div>
 
-              <div className="md:w-1/2 relative z-0 flex justify-center">
-                <Image
-                  src="/ChatGPT Image Apr 10, 2025, 08_38_38 AM.png"
-                  alt="Investment Solutions"
-                  width={400}
-                  height={400}
-                  className="object-contain rounded-lg w-full max-w-sm"
-                />
-              </div>
-            </div>
+  {/* Image Section */}
+  <div className="md:w-1/2 relative z-0 flex justify-center">
+    <Image
+      src="/ChatGPT Image Apr 10, 2025, 08_38_38 AM.png"
+      alt="Investment Solutions"
+      width={600}
+      height={600}
+      className="object-contain rounded-2xl w-full max-w-lg sm:max-w-xl"
+    />
+  </div>
+</div>
 
             {/* Motto Section */}
-            <div className="relative overflow-hidden w-full h-auto flex items-center justify-center -translate-y-[150px] sm:-translate-y-[150px] px-4">
-              <div className="w-full text-center relative z-10">
-                <div className="flex flex-wrap justify-center gap-x-2 gap-y-4">
+            <div className="absolute md:translate-y-4 bottom-0 left-0 right-0 w-full flex items-end justify-center">
+              <div className="w-full text-center">
+                <div className="flex flex-wrap justify-center gap-x-2">
                   {["Smarter", "Finance", "Starts", "Here."].map((word, idx) => ( 
                     <div
                       key={idx}
-                      className="text-[clamp(2rem,10vw,5rem)] font-bold tracking-wide text-white leading-tight md:text-8xl"
+                      className="text-[clamp(2rem,10vw,5rem)] font-bold tracking-wide text-white leading-none md:text-8xl"
                     >
                       {word}
                     </div>
