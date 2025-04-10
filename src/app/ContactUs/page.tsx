@@ -166,9 +166,11 @@ const ContactUs = () => {
           className="object-fill"
         />
        
-        <h1 className="text-base md:text-2xl font-serifRegular mt-4 text-center md:text-left">
-          Address here Address here Address here Address here Address here
-        </h1>
+       <h1 className="text-base md:text-2xl font-serifRegular mt-4 text-center md:text-left leading-snug">
+  Bhopal <br />
+  <span>Madhya Pradesh, India</span>
+</h1>
+
         <a
           href="mailto:alphaacademy.tech1@gmail.com"
           className="text-base font-mona mt-4"

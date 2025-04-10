@@ -7,21 +7,21 @@ export interface CardData {
 
   export const sampleData: CardData[] = [
     {
-      svg: "/spiral-32-svgrepo-com.svg",
+      svg: "/reward.svg",
       title: "RRR (Risk Reward Ratio)",
       subtitle: "Risk Management",
       description:
         "The risk-reward ratio is the cornerstone of smart investing—taking calculated risks can lead to greater rewards, but understanding and managing those risks is what ensures long-term success.",
     },
     {
-      svg: "/spiral-32-svgrepo-com.svg",
+      svg: "/research.svg",
       title: "Experienced R&D Team",
       subtitle: "Research Excellence",
       description:
         "In the stock market, an experienced R&D team is like a compass—analyzing trends, uncovering opportunities, and navigating risks to drive informed investment decisions.",
     },
     {
-      svg: "/spiral-32-svgrepo-com.svg",
+      svg: "/business-strategy.svg",
       title: "Back Tested Strategies",
       subtitle: "Proven Methods",
       description:
@@ -47,28 +47,28 @@ export interface CardData {
 
   export const sampleData2: CardData2[] = [
     {
-      svg: "/spiral-32-svgrepo-com.svg",
+      svg: "/[x9torrent.com].2697709.svg",
       title: "Smart Financial Planning",
       subtitle: "",
       description:
         "Build a strong financial foundation with expert planning and strategy.",
     },
     {
-      svg: "/spiral-32-svgrepo-com.svg",
+      svg: "/data-analysis.svg",
       title: "Data-Driven Investment Strategies",
       subtitle: "",
       description:
         "Leverage key market analytics and insights to make informed investment decisions.",
     },
     {
-      svg: "/spiral-32-svgrepo-com.svg",
+      svg: "/trend.svg",
       title: "Market Trends & Insights",
       subtitle: "",
       description:
         "Stay ahead with deep analysis of financial market movements and opportunities.",
     },
     {
-        svg: "/spiral-32-svgrepo-com.svg",
+        svg: "/wealth.svg",
         title: "Wealth Growth & Security",
         subtitle: "",
         description:

@@ -19,7 +19,7 @@ export const Cards: React.FC<CardData> = ({
         <Image
           src={svg}
           alt={title}
-          className="object-contain p-5 w-20 h-20"
+          className="object-contain p-5 w-[120px] h-[120px]"
           width={80}
           height={80}
           priority
